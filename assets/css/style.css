@@ -1,0 +1,58 @@
+body {
+    margin: 0;
+    padding: 0;
+  }
+
+  .logo-container {
+    background-color: #000000;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 2px solid red;
+    font-family: 'Play', sans-serif;
+  }
+
+  .logo {
+    color: white;
+    font-size: 30px;
+    margin: 0;
+  }
+
+.container {
+  text-align: center;
+  background-color: #000000;
+  color: white;
+  padding: 20px;
+}
+
+.main-cont {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.inventario-titulo {
+  background-color: red;
+  padding: 10px;
+  margin-top: 0;
+}
+
+.table {
+  background-color: white;
+  color: black;
+}
+
+.table th {
+  background-color: #f1dada;
+  color: white;
+}
+
+.table td {
+  border-top: none;
+}
+
+.btn {
+  margin-top: 10px;
+}
+
+.form-control {
+  width: 100%;
+}

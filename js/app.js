@@ -52,7 +52,7 @@ function agregarProducto() {
     // Guardar los productos actualizados en el localStorage
     guardarProductos(productos);
 
-    // Actualiza la lista de productos en la página
+    // Actualiza la tabla de productos en la página
     mostrarProductos();
 
     // Limpia los campos de entrada
@@ -78,7 +78,7 @@ function eliminarProducto(index) {
   // Guarda la lista de productos actualizada en el localStorage
   guardarProductos(productos);
 
-  // Actualiza la lista de productos en la página
+  // Actualiza la tabla de productos en la página
   mostrarProductos();
 }
 
@@ -111,27 +111,37 @@ function editarProducto(index) {
   botonAgregarActualizar.textContent = "Actualizar";
 }
 
-// Función para mostrar los productos en la página
+// Función para mostrar los productos en la tabla
 function mostrarProductos() {
   const productoLista = document.getElementById("productoLista");
 
   // Obtén los productos del localStorage
   const productos = obtenerProductos();
 
-  // Limpia la lista de productos en la página
+  // Limpia la tabla de productos en la página
   productoLista.innerHTML = "";
 
-  // Agrega cada producto como un elemento de lista
+  // Agrega cada producto como una fila en la tabla
   productos.forEach(function (producto, index) {
-    const li = document.createElement("li");
-    li.textContent = `Tipo: ${producto.tipo} - Producto: ${
-      producto.nombre
-    } - Precio: ${producto.precio.toFixed(2)}`;
+    const tr = document.createElement("tr");
 
-    const stockSpan = document.createElement("span");
-    stockSpan.textContent = ` Stock: ${producto.stock} `;
+    const tipoTd = document.createElement("td");
+    tipoTd.textContent = producto.tipo;
+    tr.appendChild(tipoTd);
 
-    li.appendChild(stockSpan);
+    const productoTd = document.createElement("td");
+    productoTd.textContent = producto.nombre;
+    tr.appendChild(productoTd);
+
+    const precioTd = document.createElement("td");
+    precioTd.textContent = producto.precio.toFixed(2);
+    tr.appendChild(precioTd);
+
+    const stockTd = document.createElement("td");
+    stockTd.textContent = producto.stock;
+    tr.appendChild(stockTd);
+
+    const accionesTd = document.createElement("td");
 
     const botonEditar = document.createElement("button");
     botonEditar.textContent = "Editar";
@@ -139,6 +149,7 @@ function mostrarProductos() {
     botonEditar.addEventListener("click", function () {
       editarProducto(index);
     });
+    accionesTd.appendChild(botonEditar);
 
     const botonEliminar = document.createElement("button");
     botonEliminar.textContent = "Eliminar";
@@ -146,10 +157,10 @@ function mostrarProductos() {
     botonEliminar.addEventListener("click", function () {
       eliminarProducto(index);
     });
+    accionesTd.appendChild(botonEliminar);
 
-    li.appendChild(botonEditar);
-    li.appendChild(botonEliminar);
-    productoLista.appendChild(li);
+    tr.appendChild(accionesTd);
+    productoLista.appendChild(tr);
   });
 }
 
