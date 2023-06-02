@@ -1,48 +1,61 @@
-body {
+html, body {
+    background-color: rgb(39, 0, 0) !important;
     margin: 0;
     padding: 0;
   }
 
-  .logo-container {
-    background-color: #000000;
-    padding: 20px;
-    text-align: center;
-    border-bottom: 2px solid red;
-    font-family: 'Play', sans-serif;
-  }
-
-  .logo {
-    color: white;
-    font-size: 30px;
-    margin: 0;
-  }
-
-.container {
-  text-align: center;
+.logo-container {
   background-color: #000000;
-  color: white;
-  padding: 20px;
+  padding: 30px;
+  text-align: center;
+  border-bottom: 2px solid red;
+  font-family: "Play", sans-serif;
 }
 
-.main-cont {
-  max-width: 600px;
-  margin: 0 auto;
+.logo {
+  color: white;
+  font-size: 30px;
+  margin: 0;
+}
+
+.container {
+    max-width: 300px;
+    margin: 0 auto;
+  text-align: center;
+  background-color: rgb(39, 0, 0);
+  color: rgb(255, 255, 255);
+  padding: 0px;
+  font-family: "Play", sans-serif;
 }
 
 .inventario-titulo {
-  background-color: red;
   padding: 10px;
-  margin-top: 0;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  background-color: black;
+  border: 2px solid red;
+  border-radius: 20px;
+}
+
+.lista-titulo {
+  padding: 30px 10px 10px 10px;
 }
 
 .table {
-  background-color: white;
-  color: black;
+  background-color: rgb(0, 0, 0);
+  color: rgb(252, 252, 252);
 }
 
 .table th {
-  background-color: #f1dada;
+  background-color: #ffffff;
+  color: rgb(255, 255, 255);
+  border: 2px solid red;
+}
+
+#productoLista tr td {
   color: white;
+  border: 2px solid red;
+  padding: 25px 0 0 0;
 }
 
 .table td {
@@ -50,9 +63,9 @@ body {
 }
 
 .btn {
-  margin-top: 10px;
+  margin-top: 25px;
 }
 
-.form-control {
-  width: 100%;
+.row h4{
+    font-size: 15px;
 }

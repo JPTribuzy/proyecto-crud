@@ -29,7 +29,8 @@ function agregarProducto() {
   if (
     nuevoProducto.tipo &&
     nuevoProducto.nombre &&
-    !isNaN(nuevoProducto.precio)
+    !isNaN(nuevoProducto.precio) &&
+    nuevoProducto.stock
   ) {
     // Aqui leo los productos existentes del localStorage
     const productos = obtenerProductos();
@@ -62,7 +63,7 @@ function agregarProducto() {
     stockInput.value = "";
   } else {
     alert(
-      "Selecciona un tipo de producto, ingresa un nombre para el producto, un precio y stock."
+      "Ingresa un dato o valor válido para cada campo."
     );
   }
 }
@@ -125,20 +126,59 @@ function mostrarProductos() {
   productos.forEach(function (producto, index) {
     const tr = document.createElement("tr");
 
-    const tipoTd = document.createElement("td");
+// Dentro de la función mostrarProductos()
+// Verificar que tipo de producto es y le asigno un icono de identificacion de bootstrap
+
+const tipoTd = document.createElement("td");
+
+switch (producto.tipo) {
+  case "Audifonos":
+    const audifonosIcono = document.createElement("i");
+    audifonosIcono.classList.add("bi", "bi-headset");
+    tipoTd.appendChild(audifonosIcono);
+    tipoTd.appendChild(document.createTextNode(" Audifonos"));
+    break;
+  case "Mouse":
+    const mouseIcono = document.createElement("i");
+    mouseIcono.classList.add("bi", "bi-mouse");
+    tipoTd.appendChild(mouseIcono);
+    tipoTd.appendChild(document.createTextNode(" Mouse"));
+    break;
+  case "Monitores":
+    const monitoresIcono = document.createElement("i");
+    monitoresIcono.classList.add("bi", "bi-display");
+    tipoTd.appendChild(monitoresIcono);
+    tipoTd.appendChild(document.createTextNode(" Monitores"));
+    break;
+  case "Sillas":
+    const sillasIcono = document.createElement("i");
+    sillasIcono.classList.add("bi", "bi-train-lightrail-front-fill");
+    tipoTd.appendChild(sillasIcono);
+    tipoTd.appendChild(document.createTextNode(" Sillas"));
+    break;
+  case "Teclados":
+    const tecladosIcono = document.createElement("i");
+    tecladosIcono.classList.add("bi", "bi-keyboard");
+    tipoTd.appendChild(tecladosIcono);
+    tipoTd.appendChild(document.createTextNode(" Teclados"));
+    break;
+  default:
     tipoTd.textContent = producto.tipo;
-    tr.appendChild(tipoTd);
+}
+
+tr.appendChild(tipoTd);
+
 
     const productoTd = document.createElement("td");
     productoTd.textContent = producto.nombre;
     tr.appendChild(productoTd);
 
     const precioTd = document.createElement("td");
-    precioTd.textContent = producto.precio.toFixed(2);
+    precioTd.textContent = "$ " + producto.precio.toFixed(2);
     tr.appendChild(precioTd);
 
     const stockTd = document.createElement("td");
-    stockTd.textContent = producto.stock;
+    stockTd.textContent = producto.stock + " uds";
     tr.appendChild(stockTd);
 
     const accionesTd = document.createElement("td");
