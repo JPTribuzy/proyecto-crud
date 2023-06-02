@@ -62,9 +62,7 @@ function agregarProducto() {
     precioInput.value = "";
     stockInput.value = "";
   } else {
-    alert(
-      "Ingresa un dato o valor válido para cada campo."
-    );
+    alert("Ingresa un dato o valor válido para cada campo.");
   }
 }
 
@@ -126,48 +124,47 @@ function mostrarProductos() {
   productos.forEach(function (producto, index) {
     const tr = document.createElement("tr");
 
-// Dentro de la función mostrarProductos()
-// Verificar que tipo de producto es y le asigno un icono de identificacion de bootstrap
+    // Dentro de la función mostrarProductos()
+    // Verificar que tipo de producto es y le asigno un icono de identificacion de bootstrap
 
-const tipoTd = document.createElement("td");
+    const tipoTd = document.createElement("td");
 
-switch (producto.tipo) {
-  case "Audifonos":
-    const audifonosIcono = document.createElement("i");
-    audifonosIcono.classList.add("bi", "bi-headset");
-    tipoTd.appendChild(audifonosIcono);
-    tipoTd.appendChild(document.createTextNode(" Audifonos"));
-    break;
-  case "Mouse":
-    const mouseIcono = document.createElement("i");
-    mouseIcono.classList.add("bi", "bi-mouse");
-    tipoTd.appendChild(mouseIcono);
-    tipoTd.appendChild(document.createTextNode(" Mouse"));
-    break;
-  case "Monitores":
-    const monitoresIcono = document.createElement("i");
-    monitoresIcono.classList.add("bi", "bi-display");
-    tipoTd.appendChild(monitoresIcono);
-    tipoTd.appendChild(document.createTextNode(" Monitores"));
-    break;
-  case "Sillas":
-    const sillasIcono = document.createElement("i");
-    sillasIcono.classList.add("bi", "bi-train-lightrail-front-fill");
-    tipoTd.appendChild(sillasIcono);
-    tipoTd.appendChild(document.createTextNode(" Sillas"));
-    break;
-  case "Teclados":
-    const tecladosIcono = document.createElement("i");
-    tecladosIcono.classList.add("bi", "bi-keyboard");
-    tipoTd.appendChild(tecladosIcono);
-    tipoTd.appendChild(document.createTextNode(" Teclados"));
-    break;
-  default:
-    tipoTd.textContent = producto.tipo;
-}
+    switch (producto.tipo) {
+      case "Audifonos":
+        const audifonosIcono = document.createElement("i");
+        audifonosIcono.classList.add("bi", "bi-headset");
+        tipoTd.appendChild(audifonosIcono);
+        tipoTd.appendChild(document.createTextNode(" Audifonos"));
+        break;
+      case "Mouse":
+        const mouseIcono = document.createElement("i");
+        mouseIcono.classList.add("bi", "bi-mouse");
+        tipoTd.appendChild(mouseIcono);
+        tipoTd.appendChild(document.createTextNode(" Mouse"));
+        break;
+      case "Monitores":
+        const monitoresIcono = document.createElement("i");
+        monitoresIcono.classList.add("bi", "bi-display");
+        tipoTd.appendChild(monitoresIcono);
+        tipoTd.appendChild(document.createTextNode(" Monitores"));
+        break;
+      case "Sillas":
+        const sillasIcono = document.createElement("i");
+        sillasIcono.classList.add("bi", "bi-train-lightrail-front-fill");
+        tipoTd.appendChild(sillasIcono);
+        tipoTd.appendChild(document.createTextNode(" Sillas"));
+        break;
+      case "Teclados":
+        const tecladosIcono = document.createElement("i");
+        tecladosIcono.classList.add("bi", "bi-keyboard");
+        tipoTd.appendChild(tecladosIcono);
+        tipoTd.appendChild(document.createTextNode(" Teclados"));
+        break;
+      default:
+        tipoTd.textContent = producto.tipo;
+    }
 
-tr.appendChild(tipoTd);
-
+    tr.appendChild(tipoTd);
 
     const productoTd = document.createElement("td");
     productoTd.textContent = producto.nombre;
@@ -183,20 +180,36 @@ tr.appendChild(tipoTd);
 
     const accionesTd = document.createElement("td");
 
+    // Opcion para editar botones de la tabla y agregar iconos de bootstrap
+
     const botonEditar = document.createElement("button");
-    botonEditar.textContent = "Editar";
-    botonEditar.classList.add("btn", "btn-primary", "btn-sm", "ms-2");
+    botonEditar.classList.add("editar-btn");
+
+    const iconoEditar = document.createElement("i");
+    iconoEditar.classList.add("bi", "bi-pencil");
+
+    botonEditar.appendChild(iconoEditar);
+    botonEditar.insertAdjacentText("beforeend", " Editar");
+
     botonEditar.addEventListener("click", function () {
       editarProducto(index);
     });
+
     accionesTd.appendChild(botonEditar);
 
     const botonEliminar = document.createElement("button");
-    botonEliminar.textContent = "Eliminar";
-    botonEliminar.classList.add("btn", "btn-danger", "btn-sm", "ms-2");
+    botonEliminar.classList.add("eliminar-btn");
+
+    const iconoEliminar = document.createElement("i");
+    iconoEliminar.classList.add("bi", "bi-trash");
+
+    botonEliminar.appendChild(iconoEliminar);
+    botonEliminar.insertAdjacentText("beforeend", " Eliminar");
+
     botonEliminar.addEventListener("click", function () {
       eliminarProducto(index);
     });
+
     accionesTd.appendChild(botonEliminar);
 
     tr.appendChild(accionesTd);
