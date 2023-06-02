@@ -2,6 +2,10 @@
 
 Gestor de tareas con HTML, CSS y JavaScript
 
+## Github Pages Link
+
+https://jptribuzy.github.io/proyecto-crud/
+
 ## Descripción
 
 Este proyecto es un gestor de tareas simple que permite a los usuarios crear, organizar y realizar un seguimiento de productos en inventario. Está desarrollado utilizando HTML, CSS y JavaScript con el uso del DOM y Local Storage para almacenar los datos de las tareas.
