@@ -1,8 +1,9 @@
-html, body {
-    background-color: rgb(39, 0, 0) !important;
-    margin: 0;
-    padding: 0;
-  }
+html,
+body {
+  background-color: rgb(39, 0, 0) !important;
+  margin: 0;
+  padding: 0;
+}
 
 .logo-container {
   background-color: #000000;
@@ -19,15 +20,14 @@ html, body {
 }
 
 .container {
-    max-width: 300px;
-    margin-bottom: 250px;
+  max-width: 300px;
+  margin-bottom: 250px;
   text-align: center;
   background-color: rgb(39, 0, 0);
   color: rgb(255, 255, 255);
   padding: 0px;
   font-family: "Play", sans-serif;
 }
-
 
 .inventario-titulo {
   padding: 10px;
@@ -60,6 +60,10 @@ html, body {
   padding: 20px 0 20px 0;
 }
 
+#productoLista tr td:hover {
+    color: yellow;
+}
+
 .table td {
   border-top: none;
 }
@@ -68,75 +72,88 @@ html, body {
   margin-top: 10px;
 }
 
-
-.row h4{
-    font-size: 15px;
+.row h4 {
+  font-size: 15px;
 }
 
-.editar-btn, .eliminar-btn {
-    background-color: rgb(145, 4, 4);
-    font-family: 'Carrois Gothic SC', sans-serif;
-    border: none;
-    border-radius: 5px;
-    color: white;
-    padding: 5px 12px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 12px;
-    cursor: pointer;
-    margin: 0 10px 0 10px;
-    transition: all 0.3s ease-in-out;
+.editar-btn,
+.eliminar-btn {
+  background-color: rgb(145, 4, 4);
+  font-family: "Carrois Gothic SC", sans-serif;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 5px 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  cursor: pointer;
+  margin: 0 10px 0 10px;
+  transition: all 0.3s ease-in-out;
 }
 
-.editar-btn:hover {
-    background-color: blue;
+.eliminar-btn:hover, .editar-btn:hover{
+  background-color: rgb(255, 0, 0);
 }
-
-.eliminar-btn:hover {
-    background-color: rgb(255, 0, 0);
-}
-
 
 .botonAgregarActualizar {
-    background-color: rgb(145, 4, 4);
-    font-family: 'Carrois Gothic SC', sans-serif;
-    border: none;
-    border-radius: 5px;
-    color: white;
-    padding: 12px 30px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 15px;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
+  background-color: rgb(145, 4, 4);
+  font-family: "Carrois Gothic SC", sans-serif;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 12px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
 }
 
 .botonAgregarActualizar:hover {
-    background-color: rgb(5, 112, 5);
+  background-color: rgb(255, 0, 0);
 }
 
 /*          FOOTER          */
 footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #000000;
+  color: white;
+  padding: 5px;
+  text-align: center;
+  border-top: 2px solid red;
+}
+.footer-copyright {
+  text-align: center;
+  font-family: "Play", sans-serif;
+  font-size: 12px;
+}
+.footer-copyright img {
+  width: 60px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.notificacion {
     position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: #000000;
-    color: white;
-    padding: 5px;
-    text-align: center;
-    border-top: 2px solid red;
+    font-family: "Carrois Gothic SC", sans-serif;
+    top: 91%;
+    right: 10px;
+    padding: 20px 20px;
+    background-color: rgb(145, 4, 4);
+    color: #ffffff;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgb(0, 0, 0);
+    font-size: 20px;
+    transition: opacity 0.3s ease-in-out;
   }
-  .footer-copyright {
-    text-align: center;
-    font-family: 'Play', sans-serif;
-    font-size: 12px;
-  }
-  .footer-copyright img {
-    width: 60px;
-    border-radius: 50%;
-    margin-bottom: 10px;
-    margin-top: 10px;
+
+  .notificacion:hover {
+    opacity: 0.8;
   }

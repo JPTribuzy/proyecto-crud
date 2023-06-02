@@ -12,6 +12,22 @@ function guardarProductos(productos) {
   localStorage.setItem("productos", JSON.stringify(productos));
 }
 
+// Función para mostrar una notificación
+function mostrarNotificacion(mensaje, tipo) {
+  // Crea un elemento de notificación
+  const notificacion = document.createElement("div");
+  notificacion.classList.add("notificacion", tipo);
+  notificacion.textContent = mensaje;
+
+  // Agrega la notificación al cuerpo de la página
+  document.body.appendChild(notificacion);
+
+  // Desaparece la notificación después de 3 segundos
+  setTimeout(function () {
+    notificacion.remove();
+  }, 3000);
+}
+
 // Con esta funcion puedo agregar un nuevo producto
 function agregarProducto() {
   const tipoInput = document.getElementById("tipoInput");
@@ -61,10 +77,15 @@ function agregarProducto() {
     productoInput.value = "";
     precioInput.value = "";
     stockInput.value = "";
+
+     // Mostrar notificación de cambios aplicados
+  mostrarNotificacion("Guardado Exitoso");
+
   } else {
     alert("Ingresa un dato o valor válido para cada campo.");
   }
 }
+
 
 // Función para eliminar un producto de la lista
 function eliminarProducto(index) {
@@ -79,6 +100,10 @@ function eliminarProducto(index) {
 
   // Actualiza la tabla de productos en la página
   mostrarProductos();
+
+  // Mostrar notificación de eliminación exitosa
+mostrarNotificacion("Objeto Eliminado");
+
 }
 
 // Función para editar un producto de la lista
@@ -109,6 +134,7 @@ function editarProducto(index) {
   );
   botonAgregarActualizar.textContent = "Actualizar";
 }
+
 
 // Función para mostrar los productos en la tabla
 function mostrarProductos() {
