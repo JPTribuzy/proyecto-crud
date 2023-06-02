@@ -8,7 +8,7 @@ Este proyecto es un gestor de tareas simple que permite a los usuarios crear, or
 
 ## Visuals
 
-![Captura de pantalla](https://postimg.cc/mhzsNd7h)
+![Captura de pantalla](https://i.postimg.cc/wHYyXdYr/imagen-2023-06-02-051524790.png)
 
 ## Inicio 🚀
 
